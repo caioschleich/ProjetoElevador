@@ -53,18 +53,8 @@ namespace caioProjetoElevador
 
                     Console.WriteLine("Quantas pessoas vão entrar no elevador?");
                     elevadorA.varE = int.Parse(Console.ReadLine());
-                    /*
-                    if ((elevadorA.varE + elevadorA.ocupNova) > 0 && (elevadorA.varE + elevadorA.ocupNova) <= elevadorA.capacTotal)
-                    {
-                        elevadorA.ocupNova += elevadorA.varE;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Ops! Número menor que a capacidade do elevador (Capacidade: {elevadorA.capacTotal})");
-                        elevadorA.varE = int.Parse(Console.ReadLine());
-                        elevadorA.ocupNova += elevadorA.varE;
-                    }
-                    */
+
+                    // verifica se o número de pessoas é válido
 
                     while ((elevadorA.varE + elevadorA.ocupNova) < 0 ^ (elevadorA.varE + elevadorA.ocupNova) > elevadorA.capacTotal)
                     {
@@ -76,13 +66,8 @@ namespace caioProjetoElevador
 
                     Console.WriteLine("Digite para qual andar deseja ir:");
                     elevadorA.andarAtual = int.Parse(Console.ReadLine());
-                    /*           
-                    if (elevadorA.andarAtual < 0 ^ elevadorA.andarAtual > elevadorA.andaresTotal)
-                    {
-                        Console.WriteLine($"Ops! Número inválido. (Térreo: 0, Último andar: {elevadorA.andaresTotal})");
-                        elevadorA.andarAtual = int.Parse(Console.ReadLine());
-                    }
-                    */
+
+                    // verifica se o andar digitado é válido
 
                     while (elevadorA.andarAtual < 0 ^ elevadorA.andarAtual > elevadorA.andaresTotal)
                     {
@@ -93,13 +78,8 @@ namespace caioProjetoElevador
 
                     Console.WriteLine("Quantas pessoas vão sair do elevador?");
                     elevadorA.varS = int.Parse(Console.ReadLine());
-                    /*
-                    if (elevadorA.varS > elevadorA.ocupNova)
-                    {
-                        Console.WriteLine($"Ops! O elevador possui {elevadorA.ocupNova} pessoas dentro dele");
-                        elevadorA.varS = int.Parse(Console.ReadLine());
-                    }
-                    */
+
+                    // verifica se a quantidade de pessoas a sair é válida
 
                     while (elevadorA.varS > elevadorA.ocupNova)
                     {
@@ -139,6 +119,7 @@ namespace caioProjetoElevador
                     elevadorA.op = Console.ReadLine();
 
                     // teste para sair do programa ou permanecer após o primeiro ciclo de perguntas
+
                     if (elevadorA.op == "s")
                     {
                         Console.Clear();
